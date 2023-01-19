@@ -1,70 +1,73 @@
-<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:a="http://www.appian.com/ae/types/2009" xmlns:tns="urn:com:appian:types" targetNamespace="urn:com:appian:types">
-  <xsd:import namespace="http://www.appian.com/ae/types/2009" schemaLocation="%7Bhttp%3A%2F%2Fwww.appian.com%2Fae%2Ftypes%2F2009%7DCollaborationDocument.xsd" />
-  <xsd:complexType name="EA_Expense">
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:tns="urn:com:appian:types" targetNamespace="urn:com:appian:types">
+  <xsd:complexType name="EA_EXPENSE3">
+    <xsd:annotation>
+      <xsd:appinfo source="appian.jpa">@Table(name="EA_EXPENSE")</xsd:appinfo>
+      <xsd:documentation><![CDATA[Data type derived from the EA_EXPENSE schema]]></xsd:documentation>
+    </xsd:annotation>
     <xsd:sequence>
       <xsd:element name="ID" nillable="true" type="xsd:int">
         <xsd:annotation>
           <xsd:appinfo source="appian.jpa">@Id @GeneratedValue @Column(name="ID", nullable=false, unique=true, columnDefinition="INT")</xsd:appinfo>
         </xsd:annotation>
       </xsd:element>
-      <xsd:element name="title" nillable="true" type="xsd:string">
+      <xsd:element name="Title" nillable="true" type="xsd:string">
         <xsd:annotation>
           <xsd:appinfo source="appian.jpa">@Column(name="TITLE", columnDefinition="VARCHAR(255)")</xsd:appinfo>
         </xsd:annotation>
       </xsd:element>
-      <xsd:element name="date" nillable="true" type="xsd:string">
+      <xsd:element name="Date" nillable="true" type="xsd:date">
         <xsd:annotation>
-          <xsd:appinfo source="appian.jpa">@Column(name="DATE", columnDefinition="VARCHAR(255)")</xsd:appinfo>
+          <xsd:appinfo source="appian.jpa">@Column(name="DATE", columnDefinition="DATE")</xsd:appinfo>
         </xsd:annotation>
       </xsd:element>
-      <xsd:element name="amount" nillable="true" type="xsd:string">
+      <xsd:element name="Amount" nillable="true" type="xsd:string">
         <xsd:annotation>
           <xsd:appinfo source="appian.jpa">@Column(name="AMOUNT", columnDefinition="VARCHAR(255)")</xsd:appinfo>
         </xsd:annotation>
       </xsd:element>
-      <xsd:element name="category" nillable="true" type="xsd:string">
+      <xsd:element name="Category" nillable="true" type="xsd:string">
         <xsd:annotation>
           <xsd:appinfo source="appian.jpa">@Column(name="CATEGORY", columnDefinition="VARCHAR(255)")</xsd:appinfo>
         </xsd:annotation>
       </xsd:element>
-      <xsd:element name="type" nillable="true" type="xsd:string">
+      <xsd:element name="Type" nillable="true" type="xsd:string">
         <xsd:annotation>
           <xsd:appinfo source="appian.jpa">@Column(name="TYPE", columnDefinition="VARCHAR(255)")</xsd:appinfo>
         </xsd:annotation>
       </xsd:element>
-      <xsd:element name="merchant" nillable="true" type="xsd:string">
+      <xsd:element name="Merchant" nillable="true" type="xsd:string">
         <xsd:annotation>
           <xsd:appinfo source="appian.jpa">@Column(name="MERCHANT", columnDefinition="VARCHAR(255)")</xsd:appinfo>
         </xsd:annotation>
       </xsd:element>
-      <xsd:element name="account" nillable="true" type="xsd:string">
+      <xsd:element name="Account" nillable="true" type="xsd:string">
         <xsd:annotation>
           <xsd:appinfo source="appian.jpa">@Column(name="ACCOUNT", columnDefinition="VARCHAR(255)")</xsd:appinfo>
         </xsd:annotation>
       </xsd:element>
-      <xsd:element form="unqualified" name="receipt" nillable="true" type="a:CollaborationDocument">
+      <xsd:element name="Receipt" nillable="true" type="xsd:int">
         <xsd:annotation>
           <xsd:appinfo source="appian.jpa">@Column(name="RECEIPT", columnDefinition="INT")</xsd:appinfo>
         </xsd:annotation>
       </xsd:element>
-      <xsd:element name="extractionID" nillable="true" type="xsd:int">
+      <xsd:element name="ExtractionID" nillable="true" type="xsd:int">
         <xsd:annotation>
-          <xsd:appinfo source="appian.jpa">@Column(name="ExtractionID", columnDefinition="INT")</xsd:appinfo>
+          <xsd:appinfo source="appian.jpa">@Column(name="EXTRACTION_ID", columnDefinition="INT")</xsd:appinfo>
         </xsd:annotation>
       </xsd:element>
-      <xsd:element name="submittedBy" nillable="true" type="xsd:string">
+      <xsd:element name="SubmittedBy" nillable="true" type="xsd:string">
         <xsd:annotation>
-          <xsd:appinfo source="appian.jpa">@Column(name="SubmittedBy", columnDefinition="VARCHAR(155)")</xsd:appinfo>
+          <xsd:appinfo source="appian.jpa">@Column(name="SUBMITTED_BY", columnDefinition="VARCHAR(155)")</xsd:appinfo>
         </xsd:annotation>
       </xsd:element>
-      <xsd:element name="submittedOn" nillable="true" type="xsd:date">
+      <xsd:element name="SubmittedOn" nillable="true" type="xsd:date">
         <xsd:annotation>
-          <xsd:appinfo source="appian.jpa">@Column(name="SubmittedOn", columnDefinition="DATE")</xsd:appinfo>
+          <xsd:appinfo source="appian.jpa">@Column(name="SUBMITTED_ON", columnDefinition="DATE")</xsd:appinfo>
         </xsd:annotation>
       </xsd:element>
-      <xsd:element name="reportID" nillable="true" type="xsd:int">
+      <xsd:element name="ReportID" nillable="true" type="xsd:int">
         <xsd:annotation>
-          <xsd:appinfo source="appian.jpa">@Column(name="ReportID", columnDefinition="INT") @JoinColumn(name="ReportID")</xsd:appinfo>
+          <xsd:appinfo source="appian.jpa">@Column(name="REPORT_ID", columnDefinition="INT") @JoinColumn(name="REPORT_ID")</xsd:appinfo>
         </xsd:annotation>
       </xsd:element>
     </xsd:sequence>
