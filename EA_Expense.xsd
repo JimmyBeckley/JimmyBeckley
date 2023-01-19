@@ -1,4 +1,5 @@
 <xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:tns="urn:com:appian:types" targetNamespace="urn:com:appian:types">
+  <xsd:import namespace="http://www.appian.com/ae/types/2009" schemaLocation="%7Bhttp%3A%2F%2Fwww.appian.com%2Fae%2Ftypes%2F2009%7DCollaborationDocument.xsd" />
   <xsd:complexType name="EA_EXPENSE">
     <xsd:annotation>
       <xsd:appinfo source="appian.jpa">@Table(name="EA_EXPENSE")</xsd:appinfo>
